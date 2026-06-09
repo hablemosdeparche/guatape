@@ -10,7 +10,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cartagena Local — El Parche</title>
+<title>Guatape Local - El Parche</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,18 +18,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
 :root {
-  --gold: #C9983A;
-  --gold-light: #E8B84B;
-  --coral: #C94F2A;
-  --dark: #0F0C08;
-  --dark2: #181309;
-  --card-bg: #1C1508;
-  --card-border: #2E2010;
-  --text: #F0E8D8;
-  --muted: #7A6A4A;
-  --muted2: #9A8A6A;
-  --tag-bg: #241A08;
-  --nav-bg: #0F0C08;
+  --gold: #2980B9;
+  --gold-light: #5DADE2;
+  --coral: #1A5276;
+  --dark: #080C0F;
+  --dark2: #0C1419;
+  --card-bg: #101C24;
+  --card-border: #1A2E3C;
+  --text: #EAEAEA;
+  --muted: #4A6A7A;
+  --muted2: #6A8A9A;
+  --tag-bg: #14242E;
+  --nav-bg: #080C0F;
   --radius: 18px;
   --radius-sm: 10px;
   --whatsapp: #25D366;
@@ -46,15 +46,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.5;
-}
+body::before { display: none; }
 .app {
   width: 100%;
   max-width: 480px;
@@ -63,7 +55,7 @@ body::before {
   padding-bottom: 90px;
 }
 
-/* ── HEADER ── */
+/* -- HEADER -- */
 .app-header {
   padding: 22px 20px 14px;
   position: sticky;
@@ -71,7 +63,7 @@ body::before {
   z-index: 200;
   background: rgba(15,12,8,0.93);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(201,152,58,0.08);
+  border-bottom: 1px solid rgba(41,128,185,0.15);
 }
 .header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
 .logo h1 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; color: var(--gold); letter-spacing: -0.5px; line-height: 1; }
@@ -84,7 +76,7 @@ body::before {
 }
 .search-box input::placeholder { color: var(--muted); }
 .search-box input:focus { border-color: var(--gold); }
-.search-box::before { content: '🔍'; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 13px; pointer-events: none; }
+.search-box::before { content: '??'; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 13px; pointer-events: none; }
 .cats-scroll { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
 .cats-scroll::-webkit-scrollbar { display: none; }
 .cat-pill {
@@ -95,15 +87,15 @@ body::before {
 }
 .cat-pill.active { background: var(--gold); color: var(--dark); border-color: var(--gold); }
 
-/* ── SCREENS ── */
+/* -- SCREENS -- */
 .screen { display: none; }
 .screen.active { display: block; }
 
-/* ── BANNER ── */
+/* -- BANNER -- */
 .banner {
   margin: 16px 16px 0;
-  background: linear-gradient(135deg, #2A1505, #1C0F03);
-  border: 1px solid #3D2008; border-radius: var(--radius);
+  background: linear-gradient(135deg, #061218, #020A10);
+  border: 1px solid #102838; border-radius: var(--radius);
   overflow: hidden; transition: border-color 0.2s;
 }
 .banner:hover { border-color: var(--gold); }
@@ -129,11 +121,11 @@ body::before {
 .btn-ver-eventos:hover { background: var(--gold-light); }
 .btn-ver-eventos:active { transform: scale(0.98); }
 
-/* ── SEC HEADER ── */
+/* -- SEC HEADER -- */
 .sec-header { display: flex; justify-content: space-between; align-items: center; padding: 22px 16px 12px; }
 .sec-header h2 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; font-style: italic; color: var(--text); }
 
-/* ── PLACES FEED ── */
+/* -- PLACES FEED -- */
 .places-feed { padding: 0 16px; display: flex; flex-direction: column; gap: 16px; }
 .place-card {
   background: var(--card-bg); border: 1px solid var(--card-border);
@@ -209,7 +201,7 @@ body::before {
 .place-barrio { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 5px; }
 .place-barrio i { color: var(--muted2); font-size: 11px; }
 
-/* ── EVENTOS SCREEN ── */
+/* -- EVENTOS SCREEN -- */
 .events-screen-header { padding: 20px 16px 0; }
 .events-screen-header h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 900; color: var(--gold); font-style: italic; }
 .events-screen-header p { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); font-family: 'Syne', sans-serif; margin-top: 3px; margin-bottom: 14px; }
@@ -238,7 +230,7 @@ body::before {
 .ev-info-full h3 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
 .ev-detail-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted2); margin-bottom: 6px; }
 
-/* ── MAPA ── */
+/* -- MAPA -- */
 .map-screen { display: flex; flex-direction: column; height: calc(100vh - 140px); }
 #map { flex: 1; width: 100%; min-height: 400px; }
 .leaflet-popup-content-wrapper { background: var(--card-bg) !important; color: var(--text) !important; border: 1px solid var(--gold) !important; border-radius: 12px !important; box-shadow: 0 4px 20px rgba(0,0,0,0.6) !important; }
@@ -246,7 +238,7 @@ body::before {
 .popup-name { font-weight: 600; font-size: 14px; color: var(--gold); margin-bottom: 4px; }
 .popup-barrio { font-size: 12px; color: var(--muted2); }
 
-/* ── GUARDADOS ── */
+/* -- GUARDADOS -- */
 .saved-screen-header { padding: 20px 16px 16px; }
 .saved-screen-header h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 900; font-style: italic; color: var(--gold); }
 .saved-screen-header p { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); font-family: 'Syne', sans-serif; margin-top: 3px; }
@@ -255,9 +247,9 @@ body::before {
 .saved-empty h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--muted2); margin-bottom: 8px; }
 .saved-empty p { font-size: 13px; line-height: 1.6; }
 
-/* ══════════════════════════════════
+/* ----------------------------------
    MODAL — todo en una pantalla
-══════════════════════════════════ */
+---------------------------------- */
 .overlay {
   position: fixed; inset: 0;
   background: rgba(0,0,0,0.9);
@@ -436,7 +428,7 @@ body::before {
 }
 .btn-icon:hover { border-color: var(--gold); color: var(--gold); }
 
-/* ── BOTTOM NAV ── */
+/* -- BOTTOM NAV -- */
 .bottom-nav {
   position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
   width: 100%; max-width: 480px;
@@ -451,7 +443,7 @@ body::before {
 .nav-it.active .nav-icon { transform: scale(1.15); }
 .nav-it.active .nav-icon i { color: var(--gold); }
 
-/* ── WHATSAPP FLOTANTE ── */
+/* -- WHATSAPP FLOTANTE -- */
 .wa-float { position: fixed; bottom: 88px; right: calc(50% - 228px); z-index: 400; }
 .wa-btn {
   background: var(--whatsapp); border: none; border-radius: 50px;
@@ -477,7 +469,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="app-header">
     <div class="header-top">
       <div class="logo">
-        <h1>Cartagena Local</h1>
+        <h1>Guatape Local</h1>
         <p>Lo que hacen los de aquí</p>
       </div>
     </div>
@@ -486,12 +478,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="cats-scroll">
       <div class="cat-pill active" onclick="setFilter('todos',this)">Todos</div>
-      <div class="cat-pill" onclick="setFilter('bares',this)">🍺 Bares</div>
-      <div class="cat-pill" onclick="setFilter('cafe',this)">☕ Cafés</div>
-      <div class="cat-pill" onclick="setFilter('comida',this)">🍽 Comida</div>
-      <div class="cat-pill" onclick="setFilter('plan',this)">🌅 Planes</div>
-      <div class="cat-pill" onclick="setFilter('arte',this)">🎨 Arte</div>
-      <div class="cat-pill" onclick="setFilter('noche',this)">🌙 Noche</div>
+      <div class="cat-pill" onclick="setFilter('bares',this)">?? Bares</div>
+      <div class="cat-pill" onclick="setFilter('cafe',this)">? Cafés</div>
+      <div class="cat-pill" onclick="setFilter('comida',this)">?? Comida</div>
+      <div class="cat-pill" onclick="setFilter('plan',this)">?? Planes</div>
+      <div class="cat-pill" onclick="setFilter('arte',this)">?? Arte</div>
+      <div class="cat-pill" onclick="setFilter('noche',this)">?? Noche</div>
     </div>
   </div>
 
@@ -499,17 +491,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="screen active" id="screen-inicio">
     <div class="banner" id="banner-eventos">
       <div class="banner-header" onclick="toggleBanner()">
-        <div class="banner-flame">🔥</div>
+        <div class="banner-flame">??</div>
         <div class="banner-texto">
           <h3>¿Qué hacer esta noche?</h3>
           <p>Eventos programados para el mes</p>
         </div>
-        <div class="banner-arrow">❯</div>
+        <div class="banner-arrow">?</div>
       </div>
       <div class="banner-body">
         <div id="banner-events-list"></div>
         <div class="banner-cta">
-          <button class="btn-ver-eventos" onclick="goScreen('screen-eventos')">Ver todos los eventos del año →</button>
+          <button class="btn-ver-eventos" onclick="goScreen('screen-eventos')">Ver todos los eventos del año ?</button>
         </div>
       </div>
     </div>
@@ -550,7 +542,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- BOTON REGISTRO -->
 <div class="wa-float">
   <a class="wa-btn" href="https://hablemosdeparche.github.io/elparche-admin/admintaller/" style="text-decoration:none;">
-    <span class="wa-btn-icon">📋</span>
+    <span class="wa-btn-icon">??</span>
     <span class="wa-btn-text">Registra tu local</span>
   </a>
 </div>
@@ -560,7 +552,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="modal-sheet" id="modal-sheet">
     <div class="modal-hero" id="modal-hero">
       <div class="modal-handle"></div>
-      <div class="modal-close" onclick="closeModal()">✕</div>
+      <div class="modal-close" onclick="closeModal()">?</div>
       <svg class="modal-hero-icon" id="modal-hero-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
     </div>
     <div class="modal-body">
@@ -586,46 +578,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <script>
-// ══════════════════════════════════════
+// --------------------------------------
 // SVG ICONS
-// ══════════════════════════════════════
+// --------------------------------------
 const svgIcons = {
-  bares: `<circle cx="40" cy="28" r="18" stroke="#C9983A" stroke-width="2.5" fill="none"/>
-    <path d="M28 28 Q28 52 40 52 Q52 52 52 28" stroke="#C9983A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    <path d="M52 20 L58 16 L58 32 L52 28" stroke="#C9983A" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
-    <path d="M34 52 L46 52" stroke="#C9983A" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M37 56 L43 56" stroke="#C9983A" stroke-width="2" stroke-linecap="round"/>`,
+  bares: `<circle cx="40" cy="28" r="18" stroke="#2980B9" stroke-width="2.5" fill="none"/>
+    <path d="M28 28 Q28 52 40 52 Q52 52 52 28" stroke="#2980B9" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M52 20 L58 16 L58 32 L52 28" stroke="#2980B9" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+    <path d="M34 52 L46 52" stroke="#2980B9" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M37 56 L43 56" stroke="#2980B9" stroke-width="2" stroke-linecap="round"/>`,
 
-  cafe: `<path d="M24 30 Q24 54 40 54 Q56 54 56 30" stroke="#C9983A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    <path d="M24 30 L56 30" stroke="#C9983A" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M56 34 Q64 34 64 42 Q64 50 56 50" stroke="#C9983A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    <path d="M32 54 L48 54" stroke="#C9983A" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M36 22 Q36 16 40 18 Q44 20 44 14" stroke="#C9983A" stroke-width="2" fill="none" stroke-linecap="round"/>`,
+  cafe: `<path d="M24 30 Q24 54 40 54 Q56 54 56 30" stroke="#2980B9" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M24 30 L56 30" stroke="#2980B9" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M56 34 Q64 34 64 42 Q64 50 56 50" stroke="#2980B9" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M32 54 L48 54" stroke="#2980B9" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M36 22 Q36 16 40 18 Q44 20 44 14" stroke="#2980B9" stroke-width="2" fill="none" stroke-linecap="round"/>`,
 
-  comida: `<path d="M28 18 L28 40" stroke="#C9983A" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M28 18 Q20 26 20 32 Q20 40 28 40" stroke="#C9983A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    <path d="M28 40 L28 62" stroke="#C9983A" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M50 18 L50 28 Q50 36 42 36 Q50 36 50 44 L50 62" stroke="#C9983A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`,
+  comida: `<path d="M28 18 L28 40" stroke="#2980B9" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M28 18 Q20 26 20 32 Q20 40 28 40" stroke="#2980B9" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M28 40 L28 62" stroke="#2980B9" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M50 18 L50 28 Q50 36 42 36 Q50 36 50 44 L50 62" stroke="#2980B9" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`,
 
-  plan: `<circle cx="40" cy="40" r="22" stroke="#C9983A" stroke-width="2.5" fill="none"/>
-    <path d="M40 18 L40 24" stroke="#C9983A" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M40 56 L40 62" stroke="#C9983A" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M18 40 L24 40" stroke="#C9983A" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M56 40 L62 40" stroke="#C9983A" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M40 40 L50 30" stroke="#C9983A" stroke-width="2.5" stroke-linecap="round"/>
-    <circle cx="40" cy="40" r="3" fill="#C9983A"/>`,
+  plan: `<circle cx="40" cy="40" r="22" stroke="#2980B9" stroke-width="2.5" fill="none"/>
+    <path d="M40 18 L40 24" stroke="#2980B9" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M40 56 L40 62" stroke="#2980B9" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M18 40 L24 40" stroke="#2980B9" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M56 40 L62 40" stroke="#2980B9" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M40 40 L50 30" stroke="#2980B9" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="40" cy="40" r="3" fill="#2980B9"/>`,
 
-  arte: `<rect x="18" y="22" width="44" height="36" rx="4" stroke="#C9983A" stroke-width="2.5" fill="none"/>
-    <circle cx="30" cy="33" r="4" stroke="#C9983A" stroke-width="2" fill="none"/>
-    <path d="M18 46 L30 36 L40 44 L50 32 L62 46" stroke="#C9983A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`,
+  arte: `<rect x="18" y="22" width="44" height="36" rx="4" stroke="#2980B9" stroke-width="2.5" fill="none"/>
+    <circle cx="30" cy="33" r="4" stroke="#2980B9" stroke-width="2" fill="none"/>
+    <path d="M18 46 L30 36 L40 44 L50 32 L62 46" stroke="#2980B9" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`,
 
-  noche: `<path d="M44 18 Q32 20 28 32 Q24 44 34 52 Q44 60 56 54 Q44 56 40 46 Q36 36 44 28 Q48 22 44 18Z" stroke="#C9983A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="56" cy="28" r="2.5" fill="#C9983A"/>
-    <circle cx="62" cy="38" r="1.5" fill="#C9983A"/>
-    <circle cx="52" cy="20" r="1.5" fill="#C9983A"/>`,
+  noche: `<path d="M44 18 Q32 20 28 32 Q24 44 34 52 Q44 60 56 54 Q44 56 40 46 Q36 36 44 28 Q48 22 44 18Z" stroke="#2980B9" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="56" cy="28" r="2.5" fill="#2980B9"/>
+    <circle cx="62" cy="38" r="1.5" fill="#2980B9"/>
+    <circle cx="52" cy="20" r="1.5" fill="#2980B9"/>`,
 
-  default: `<circle cx="40" cy="40" r="22" stroke="#C9983A" stroke-width="2.5" fill="none"/>
-    <circle cx="40" cy="40" r="6" fill="#C9983A"/>`
+  default: `<circle cx="40" cy="40" r="22" stroke="#2980B9" stroke-width="2.5" fill="none"/>
+    <circle cx="40" cy="40" r="6" fill="#2980B9"/>`
 };
 
 function getSVG(cat) {
@@ -636,87 +628,62 @@ function getSVG(cat) {
   return svgIcons[map[cat]] || svgIcons.default;
 }
 
-// ══════════════════════════════════════
+// --------------------------------------
 // DATOS
-// ══════════════════════════════════════
-
+// --------------------------------------
 const places = [
   // === BARES ===
-  ,
-  ,
-  ,
-  ,
-  ,
-  ,
+  { id:1, orden:999, bg:'pt4', cat:'bares', name:'Cafe del Penol', nit:'', barrio:'Penol', tags:['Mirador', 'Cafe', 'Relax'], rating:4.5, horario:'Lun-Dom 8am-8pm', precio:'$$ Promedio', desc:'Cafe bar en la cima del Penol con vista de 360 grados.', img:'', telefono:'+57 604 456 7890', instagram:'cafedelpenol', menu:['Cafe', 'Te', 'Cerveza', 'Snacks'], coords:[6.22, -75.18] },
+  { id:2, orden:999, bg:'pt5', cat:'bares', name:'Bar del Pueblo', nit:'', barrio:'Centro', tags:['Tradicional', 'Cerveza', 'Local'], rating:4.3, horario:'Lun-Dom 10am-10pm', precio:'$ Economico', desc:'Bar tradicional en el pueblo con cerveza aguila bien fria.', img:'', telefono:'+57 604 456 7890', instagram:'', menu:['Cerveza', 'Aguardiente', 'Ron', 'Gaseosa'], coords:[6.233, -75.157] },
+  { id:3, orden:999, bg:'pt6', cat:'bares', name:'El Malecon Bar', nit:'', barrio:'Malecon', tags:['Malecon', 'Vista', 'Cocteles'], rating:4.5, horario:'Lun-Dom 4pm-11pm', precio:'$$ Promedio', desc:'Bar en el malecon con vista al lago y cocteles.', img:'', telefono:'+57 604 567 8901', instagram:'elmaleconbar', menu:['Coctel', 'Cerveza', 'Vino', 'Empanadas'], coords:[6.231, -75.159] },
+  { id:4, orden:999, bg:'pt1', cat:'bares', name:'Bar del Lago', nit:'', barrio:'Malecon', tags:['Lago', 'Cerveza', 'Vista'], rating:4.5, horario:'Lun-Dom 11am-11pm', precio:'$$ Promedio', desc:'Bar frente al lago con vista al Penol. Cerveza fria y musica tropical.', img:'', telefono:'+57 604 123 4567', instagram:'bardellagoguatape', menu:['Cerveza', 'Ron', 'Coctel', 'Empanadas'], coords:[6.23, -75.16] },
+  { id:5, orden:999, bg:'pt2', cat:'bares', name:'La Terraza de Guatape', nit:'', barrio:'Malecon', tags:['Terraza', 'Vista', 'Cocteles'], rating:4.6, horario:'Lun-Dom 4pm-11pm', precio:'$$ Promedio', desc:'Terraza con vista panoramica al embalse. Cocteles y atardeceres.', img:'', telefono:'+57 604 234 5678', instagram:'laterrazaguatape', menu:['Coctel', 'Vino', 'Ceviche', 'Tabla'], coords:[6.232, -75.158] },
+  { id:6, orden:999, bg:'pt3', cat:'bares', name:'Donde Pepe', nit:'', barrio:'Centro', tags:['Tradicional', 'Cerveza', 'Tipico'], rating:4.4, horario:'Lun-Dom 10am-10pm', precio:'$ Economico', desc:'Bar tradicional del pueblo con cerveza y aguardiente. Punto de encuentro.', img:'', telefono:'+57 604 345 6789', instagram:'', menu:['Cerveza', 'Aguardiente', 'Ron', 'Gaseosa'], coords:[6.233, -75.157] },
   // === CAFES ===
-  ,
-  ,
-  ,
-  ,
-  ,
-  ,
-  ,
+  { id:7, orden:999, bg:'pt3', cat:'cafe', name:'Cafe de la Piedra', nit:'', barrio:'El Penol', tags:['Penol', 'Cafe', 'Vista'], rating:4.5, horario:'Lun-Dom 7am-6pm', precio:'$ Economico', desc:'Cafe al pie del Penol con vista a la piedra.', img:'', telefono:'+57 604 123 4567', instagram:'cafedelapiedra', menu:['Cafe', 'Te', 'Pan', 'Jugo'], coords:[6.22, -75.18] },
+  { id:8, orden:999, bg:'pt2', cat:'cafe', name:'Cafe Tipico', nit:'', barrio:'Centro', tags:['Tipico', 'Colombiano', 'Acogedor'], rating:4.4, horario:'Lun-Dom 7am-6pm', precio:'$ Economico', desc:'Cafe tipico antioqueno con pan de bono recien hecho.', img:'', telefono:'+57 604 012 3456', instagram:'', menu:['Tinto', 'Cafe', 'Pan de bono', 'Arepa'], coords:[6.234, -75.157] },
+  { id:9, orden:999, bg:'pt1', cat:'cafe', name:'Cafe del Malecon', nit:'', barrio:'Malecon', tags:['Lago', 'Cafe', 'Brunch'], rating:4.5, horario:'Lun-Dom 7am-7pm', precio:'$ Economico', desc:'Cafe frente al lago con desayunos y brunch.', img:'', telefono:'+57 604 901 2345', instagram:'cafemalecon', menu:['Capuchino', 'Tinto', 'Pan', 'Jugo'], coords:[6.23, -75.16] },
+  { id:10, orden:999, bg:'pt7', cat:'cafe', name:'Cafe de los Abuelos', nit:'', barrio:'Centro', tags:['Tradicional', 'Casero', 'Familia'], rating:4.5, horario:'Lun-Dom 7am-6pm', precio:'$ Economico', desc:'Cafe casero con recetas tradicionales. Pan de bono y bunuelos.', img:'', telefono:'+57 604 789 0123', instagram:'', menu:['Cafe', 'Te', 'Pan de bono', 'Bunuelo'], coords:[6.234, -75.157] },
+  { id:11, orden:999, bg:'pt8', cat:'cafe', name:'Cafe del Pueblo', nit:'', barrio:'Centro', tags:['Cafe', 'Tipico', 'Acogedor'], rating:4.4, horario:'Lun-Dom 7am-7pm', precio:'$ Economico', desc:'Cafe tipico del pueblo con granos antioquenos.', img:'', telefono:'+57 604 890 1234', instagram:'', menu:['Espresso', 'Tinto', 'Pan', 'Jugo'], coords:[6.232, -75.158] },
+  { id:12, orden:999, bg:'pt6', cat:'cafe', name:'Cafe del Embalse', nit:'', barrio:'Malecon', tags:['Lago', 'Vista', 'Acogedor'], rating:4.5, horario:'Lun-Dom 7am-7pm', precio:'$$ Promedio', desc:'Cafe frente al embalse con granos de la region. Ambiente tranquilo.', img:'', telefono:'+57 604 678 9012', instagram:'cafeembalse', menu:['Capuchino', 'Te', 'Brownie', 'Sandwich'], coords:[6.231, -75.159] },
+  { id:13, orden:999, bg:'pt5', cat:'cafe', name:'Cafe Plaza Mayor', nit:'', barrio:'Centro', tags:['Plaza', 'Colonial', 'Tradicional'], rating:4.6, horario:'Lun-Dom 7am-8pm', precio:'$ Economico', desc:'Cafe en la plaza principal de Guatape. Tinto y pan de bono con vista colonial.', img:'', telefono:'+57 604 567 8901', instagram:'cafeplazamayor', menu:['Tinto', 'Cafe con leche', 'Pan de bono', 'Bocadillo'], coords:[6.233, -75.158] },
   // === COMIDA ===
-  ,
-  ,
-  ,
-  ,
-  ,
-  ,
-  ,
-  ,
-  ,
+  { id:14, orden:999, bg:'pt1', cat:'comida', name:'Restaurante El Embalse', nit:'', barrio:'Malecon', tags:['Embalse', 'Pescado', 'Vista'], rating:4.5, horario:'Lun-Dom 11am-8pm', precio:'$$ Promedio', desc:'Restaurante con vista al embalse. Pescados y mariscos.', img:'', telefono:'+57 604 678 9012', instagram:'elembalseguatape', menu:['Mojarra', 'Trucha', 'Arroz', 'Patacones'], coords:[6.231, -75.159] },
+  { id:15, orden:999, bg:'pt7', cat:'comida', name:'Comida Tipica La Abuela', nit:'', barrio:'Centro', tags:['Casero', 'Tipico', 'Economico'], rating:4.4, horario:'Lun-Dom 8am-5pm', precio:'$ Economico', desc:'Comida casera de la abuela paisa. Frioles y bandeja paisa.', img:'', telefono:'+57 604 456 7890', instagram:'', menu:['Bandeja paisa', 'Frijoles', 'Arepa', 'Jugo'], coords:[6.233, -75.157] },
+  { id:16, orden:999, bg:'pt8', cat:'comida', name:'Heladeria del Parque', nit:'', barrio:'Centro', tags:['Helado', 'Postre', 'Familiar'], rating:4.3, horario:'Lun-Dom 10am-8pm', precio:'$ Economico', desc:'Helados artesanales de frutas tropicales.', img:'', telefono:'+57 604 567 8901', instagram:'', menu:['Helado', 'Batido', 'Jugo', 'Postre'], coords:[6.233, -75.158] },
+  { id:17, orden:999, bg:'pt5', cat:'comida', name:'Trucheria El Lago', nit:'', barrio:'Malecon', tags:['Trucha', 'Lago', 'Tipico'], rating:4.6, horario:'Lun-Dom 11am-8pm', precio:'$$ Promedio', desc:'Trucha fresca del embalse preparada de varias formas.', img:'', telefono:'+57 604 234 5678', instagram:'trucherialago', menu:['Trucha frita', 'Trucha al ajillo', 'Arroz', 'Patacones'], coords:[6.23, -75.16] },
+  { id:18, orden:999, bg:'pt6', cat:'comida', name:'Parrilla Donde Juan', nit:'', barrio:'Malecon', tags:['Parrilla', 'Carnes', 'Tipico'], rating:4.5, horario:'Lun-Dom 12pm-9pm', precio:'$$ Promedio', desc:'Parrilla con carnes antioquenas y chorizo.', img:'', telefono:'+57 604 345 6789', instagram:'parrilladondejuan', menu:['Bife', 'Chorizo', 'Morcilla', 'Arepa'], coords:[6.229, -75.161] },
+  { id:19, orden:999, bg:'pt3', cat:'comida', name:'Parrilla Antioquena', nit:'', barrio:'Malecon', tags:['Parrilla', 'Paisa', 'Carnes'], rating:4.6, horario:'Lun-Dom 12pm-10pm', precio:'$$ Promedio', desc:'Parrilla antioquena con carnes y chorizo.', img:'', telefono:'+57 604 123 4567', instagram:'parrillaantioquena', menu:['Bife', 'Chorizo', 'Morcilla', 'Arepa'], coords:[6.23, -75.16] },
+  { id:20, orden:999, bg:'pt2', cat:'comida', name:'Marisqueria del Lago', nit:'', barrio:'Malecon', tags:['Mariscos', 'Pescado', 'Lago'], rating:4.5, horario:'Lun-Dom 11am-9pm', precio:'$$ Promedio', desc:'Pescados frescos del embalse. Trucha y mojarra.', img:'', telefono:'+57 604 012 3456', instagram:'marisquerialago', menu:['Trucha', 'Mojarra', 'Arroz', 'Patacones'], coords:[6.231, -75.159] },
+  { id:21, orden:999, bg:'pt4', cat:'comida', name:'Restaurante La Casona', nit:'', barrio:'Centro', tags:['Colonial', 'Tipico', 'Casero'], rating:4.5, horario:'Lun-Dom 11am-9pm', precio:'$ Economico', desc:'Comida casera en casona colonial del pueblo.', img:'', telefono:'+57 604 234 5678', instagram:'lacasonaguatape', menu:['Menu del dia', 'Sopa', 'Seco', 'Postre'], coords:[6.233, -75.157] },
+  { id:22, orden:999, bg:'pt1', cat:'comida', name:'Restaurante El Penol', nit:'', barrio:'El Penol', tags:['Tipico', 'Paisa', 'Mirador'], rating:4.6, horario:'Lun-Dom 11am-9pm', precio:'$$ Promedio', desc:'Restaurante con vista al Penol. Bandeja paisa y trucha.', img:'', telefono:'+57 604 901 2345', instagram:'elpenolrest', menu:['Bandeja paisa', 'Trucha', 'Arepa', 'Jugo'], coords:[6.22, -75.18] },
   // === ARTE ===
-  ,
-  ,
-  ,
-  ,
+  { id:23, orden:999, bg:'pt7', cat:'arte', name:'Galeria de Arte Local', nit:'', barrio:'Centro', tags:['Arte', 'Local', 'Artesania'], rating:4.4, horario:'Lun-Sab 9am-6pm', precio:'Gratis', desc:'Galeria con obras de artistas locales de Guatape.', img:'', telefono:'+57 604 890 1234', instagram:'', menu:[''], coords:[6.232, -75.158] },
+  { id:24, orden:999, bg:'pt8', cat:'arte', name:'Iglesia de Guatape', nit:'', barrio:'Centro', tags:['Arquitectura', 'Religioso', 'Historico'], rating:4.5, horario:'Lun-Dom 6am-6pm', precio:'Gratis', desc:'Iglesia principal de Guatape con arquitectura colonial colorida.', img:'', telefono:'', instagram:'', menu:[''], coords:[6.233, -75.158] },
+  { id:25, orden:999, bg:'pt5', cat:'arte', name:'Casa Museo Guatape', nit:'', barrio:'Centro', tags:['Cultura', 'Historia', 'Artesania'], rating:4.5, horario:'Mar-Sab 9am-5pm', precio:'$ Economico', desc:'Museo sobre la historia de Guatape y su embalse.', img:'', telefono:'+57 604 345 6789', instagram:'', menu:[''], coords:[6.233, -75.158] },
+  { id:26, orden:999, bg:'pt6', cat:'arte', name:'Museo de la Cultura Paisa', nit:'', barrio:'Centro', tags:['Paisa', 'Cultura', 'Historia'], rating:4.5, horario:'Mar-Sab 9am-5pm', precio:'$ Economico', desc:'Museo sobre la cultura y tradiciones antioquenas.', img:'', telefono:'+57 604 789 0123', instagram:'', menu:[''], coords:[6.234, -75.157] },
   // === PLAN ===
-  ,
-  ,
-  ,
-  ,
-  ,
+  { id:27, orden:999, bg:'pt4', cat:'plan', name:'Parque Central', nit:'', barrio:'Centro', tags:['Parque', 'Descanso', 'Familiar'], rating:4.4, horario:'Siempre abierto', precio:'Gratis', desc:'Parque principal con arboles y bancas para descansar.', img:'', telefono:'', instagram:'', menu:[''], coords:[6.233, -75.158] },
+  { id:28, orden:999, bg:'pt5', cat:'plan', name:'Ciclismo alrededor del Embalse', nit:'', barrio:'Malecon', tags:['Bicicleta', 'Deporte', 'Lago'], rating:4.5, horario:'Lun-Dom 6am-5pm', precio:'$ Economico', desc:'Ruta ciclista alrededor del embalse con vistas espectaculares.', img:'', telefono:'', instagram:'', menu:[''], coords:[6.23, -75.16] },
+  { id:29, orden:999, bg:'pt3', cat:'plan', name:'Tour del Zocalo', nit:'', barrio:'Centro', tags:['Arte', 'Color', 'Fotos'], rating:4.6, horario:'Diario 9am-5pm', precio:'$ Economico', desc:'Recorrido por las calles de Guatape admirando los zocalos coloridos.', img:'', telefono:'+57 604 789 0123', instagram:'tourzocalo', menu:[''], coords:[6.233, -75.157] },
+  { id:30, orden:999, bg:'pt1', cat:'plan', name:'Mirador del Penol', nit:'', barrio:'El Penol', tags:['Mirador', 'Panoramico', 'Foto'], rating:4.7, horario:'Lun-Dom 7am-5pm', precio:'$ Economico', desc:'Mirador en la cima del Penol con vista de 360 grados.', img:'', telefono:'+57 604 567 8901', instagram:'miradordelpenol', menu:[''], coords:[6.22, -75.18] },
+  { id:31, orden:999, bg:'pt2', cat:'plan', name:'Paseo en Lancha', nit:'', barrio:'Malecon', tags:['Lancha', 'Lago', 'Paseo'], rating:4.6, horario:'Lun-Dom 8am-5pm', precio:'$$ Promedio', desc:'Paseo en lancha por el embalse con guia turistico.', img:'', telefono:'+57 604 678 9012', instagram:'paseolanchaguatape', menu:[''], coords:[6.23, -75.16] },
   // === NOCHE ===
-  ,
-  ,
-  ,
-  ,
+  { id:32, orden:999, bg:'pt8', cat:'noche', name:'Discoteca del Pueblo', nit:'', barrio:'Centro', tags:['Discoteca', 'Reggaeton', 'Joven'], rating:4.3, horario:'Vie-Sab 9pm-3am', precio:'$ Economico', desc:'Discoteca con musica urbana y luces.', img:'', telefono:'+57 604 012 3456', instagram:'', menu:['Cerveza', 'Ron', 'Whisky', 'Agua'], coords:[6.233, -75.158] },
+  { id:33, orden:999, bg:'pt1', cat:'noche', name:'Bar Karaoke Guatape', nit:'', barrio:'Centro', tags:['Karaoke', 'Fiesta', 'Cerveza'], rating:4.3, horario:'Vie-Sab 7pm-2am', precio:'$ Economico', desc:'Bar con karaoke y ambiente festivo para cantar.', img:'', telefono:'+57 604 123 4567', instagram:'', menu:['Cerveza', 'Ron', 'Aguardiente', 'Gaseosa'], coords:[6.234, -75.157] },
+  { id:34, orden:999, bg:'pt6', cat:'noche', name:'La Rumba del Pueblo', nit:'', barrio:'Centro', tags:['Salsa', 'Baile', 'Fiesta'], rating:4.4, horario:'Vie-Sab 8pm-2am', precio:'$ Economico', desc:'Salon de baile con salsa y musica popular.', img:'', telefono:'+57 604 890 1234', instagram:'larrumbapueblo', menu:['Cerveza', 'Ron', 'Aguardiente', 'Gaseosa'], coords:[6.233, -75.157] },
+  { id:35, orden:999, bg:'pt7', cat:'noche', name:'Noche Guatapena', nit:'', barrio:'Centro', tags:['Cerveza', 'Musica', 'Local'], rating:4.3, horario:'Vie-Sab 7pm-1am', precio:'$ Economico', desc:'Bar con musica en vivo y ambiente local.', img:'', telefono:'+57 604 901 2345', instagram:'nocheguatape', menu:['Cerveza', 'Ron', 'Coctel', 'Empanadas'], coords:[6.232, -75.158] },
 ];
 
-
-// ══════════════════════════════════════
+// --------------------------------------
 // EVENTOS
-// ══════════════════════════════════════
-
+// --------------------------------------
 const eventList = [
-  { date:'2026-06-08', endDate:'2026-06-08', cat:'comida', icon:'🍳', name:'Asamblea de Cocina Tradicional', nit:'', place:'Centro Histórico', price:'Entrada libre', short:'8 de junio' },
-  { date:'2026-06-24', endDate:'2026-06-24', cat:'cultural', icon:'🎉', name:'Noche de San Juan', nit:'', place:'Playas y espacios públicos', price:'Entrada libre', short:'24 de junio' },
-  { date:'2026-07-03', endDate:'2026-07-05', cat:'cultural', icon:'🎸', name:'Rock Imperium Festival', nit:'', place:'Parque El Batel', price:'Desde 195€', short:'3–5 de julio' },
-  { date:'2026-07-09', endDate:'2026-11-05', cat:'arte', icon:'📖', name:'Festival Internacional de Poesía IPCC', nit:'', place:'Bibliotecas y centros culturales', price:'Entrada libre', short:'9 jul – 5 nov' },
-  { date:'2026-07-14', endDate:'2026-07-14', cat:'arte', icon:'🎭', name:'Agenda Cultural Alianza Francesa', nit:'', place:'Alianza Francesa, Centro', price:'Variable', short:'14 de julio' },
-  { date:'2026-07-17', endDate:'2026-07-25', cat:'cultural', icon:'🎶', name:'La Mar de Músicas', nit:'', place:'Varios enclaves históricos', price:'Variable', short:'17–25 de julio' },
-  { date:'2026-07-18', endDate:'2026-07-19', cat:'cultural', icon:'🥁', name:'Festival de Tambores', nit:'', place:'Palenque y plazas del Centro', price:'Entrada libre', short:'18–19 de julio' },
-  { date:'2026-08-13', endDate:'2026-08-13', cat:'noche', icon:'💃', name:'Día de la Champeta', nit:'', place:'Barrios de Cartagena', price:'Entrada libre', short:'13 de agosto' },
-  { date:'2026-08-15', endDate:'2026-08-15', cat:'comida', icon:'🫓', name:'Festival de la Arepa de Huevo', nit:'', place:'Getsemaní', price:'Desde $5.000 COP', short:'15 de agosto' },
-  { date:'2026-08-20', endDate:'2026-08-22', cat:'arte', icon:'🩰', name:'Festival Música y Danza del Mundo', nit:'', place:'Teatros y plazas del Centro', price:'Variable', short:'20–22 de agosto' },
-  { date:'2026-08-28', endDate:'2026-08-31', cat:'arte', icon:'✍️', name:'Parlamento Internacional de Escritores', nit:'', place:'Centro Histórico', price:'Entrada libre', short:'28–31 de agosto' },
-  { date:'2026-09-10', endDate:'2026-09-12', cat:'arte', icon:'🎷', name:'Festival Voces del Jazz', nit:'', place:'Plazas y teatros del Centro', price:'Variable', short:'10–12 de septiembre' },
-  { date:'2026-09-18', endDate:'2026-09-20', cat:'arte', icon:'🎸', name:'Festival de Guitarras', nit:'', place:'Auditorios del Centro', price:'Variable', short:'18–20 de septiembre' },
-  { date:'2026-09-21', endDate:'2026-09-21', cat:'arte', icon:'🎨', name:'Día del Artista Plástico', nit:'', place:'Galerías y espacios culturales', price:'Entrada libre', short:'21 de septiembre' },
-  { date:'2026-10-10', endDate:'2026-10-12', cat:'noche', icon:'💃', name:'Festival de Salsa de Cartagena', nit:'', place:'Clubes del Centro Histórico', price:'Desde $40.000 COP', short:'10–12 de octubre' },
-  { date:'2026-10-29', endDate:'2026-11-16', cat:'arte', icon:'🎷', name:'Cartagena Jazz Festival', nit:'', place:'Auditorio El Batel', price:'Por confirmar', short:'29 oct – 16 nov' },
-  { date:'2026-10-30', endDate:'2026-10-30', cat:'noche', icon:'🔥', name:'Noche de Candela y Jolgorio', nit:'', place:'Plazas del Centro Histórico', price:'Entrada libre', short:'30 de octubre' },
-  { date:'2026-11-01', endDate:'2026-11-04', cat:'arte', icon:'🪇', name:'Festival Regional de Gaitas', nit:'', place:'Barrio El Socorro', price:'Entrada libre', short:'1–4 de noviembre' },
-  { date:'2026-11-07', endDate:'2026-11-09', cat:'arte', icon:'📖', name:'Festival de Poesía de Cartagena', nit:'', place:'Bibliotecas y cafés del Centro', price:'Entrada libre', short:'7–9 de noviembre' },
-  { date:'2026-11-11', endDate:'2026-11-16', cat:'cultural', icon:'🎉', name:'Fiestas de Independencia', nit:'', place:'Calles del Centro Histórico', price:'Entrada libre', short:'11–16 de noviembre' },
-  { date:'2026-11-13', endDate:'2026-11-14', cat:'plan', icon:'⛵', name:'Festival Náutico', nit:'', place:'Bahía de Cartagena', price:'Entrada libre', short:'13–14 de noviembre' },
-  { date:'2026-11-29', endDate:'2026-11-29', cat:'cultural', icon:'🏊', name:'IRONMAN 70.3 Cartagena', nit:'', place:'Playas de Cartagena', price:'Inscripción ~$700 USD', short:'29 de noviembre' },
-  { date:'2026-12-15', endDate:'2026-12-22', cat:'arte', icon:'🎨', name:'Feria de Artesanías de Cartagena', nit:'', place:'Plaza de San Diego', price:'Entrada libre', short:'15–22 de diciembre' },
-  { date:'2026-12-16', endDate:'2026-12-24', cat:'cultural', icon:'⭐', name:'Novenas de Aguinaldos', nit:'', place:'Calles e iglesias del Centro', price:'Entrada libre', short:'16–24 de diciembre' },
-  { date:'2026-12-17', endDate:'2026-12-26', cat:'comida', icon:'🥟', name:'Festival del Pastel Cartagenero', nit:'', place:'Plaza de los Coches', price:'Desde $5.000 COP', short:'17–26 de diciembre' },
+  { date:'2026-07-12', endDate:'2026-07-14', cat:'arte', icon:'??', name:'Feria Artesanal de Guatape', nit:'', place:'Centro', price:'Entrada libre', short:'12-14 de julio' },
+  { date:'2026-08-20', endDate:'2026-08-22', cat:'comida', icon:'??', name:'Festival de la Trucha', nit:'', place:'Malecon', price:'$15.000', short:'20-22 de agosto' },
+  { date:'2026-09-10', endDate:'2026-09-12', cat:'arte', icon:'??', name:'Festival de los Zocalos', nit:'', place:'Centro', price:'Entrada libre', short:'10-12 de septiembre' },
+  { date:'2026-10-15', endDate:'2026-10-17', cat:'comida', icon:'??', name:'Festival Gastronomico Antioqueno', nit:'', place:'Malecon', price:'Variable', short:'15-17 de octubre' },
 ];
-
 
 function getUpcomingEvents() {
   const today = new Date();
@@ -741,9 +708,9 @@ function renderEventsList(list) {
       <div class="ev-thumb-full ${etClasses[i % 5]}">${e.icon}<div class="ev-badge-full dia">${meses[m]}</div></div>
       <div class="ev-info-full">
         <h3>${e.name}</h3>
-        <div class="ev-detail-row"><span>🕐</span> ${e.short}</div>
-        <div class="ev-detail-row"><span>📍</span> ${e.place}</div>
-        <div class="ev-detail-row"><span>🎟</span> ${e.price}</div>
+        <div class="ev-detail-row"><span>??</span> ${e.short}</div>
+        <div class="ev-detail-row"><span>??</span> ${e.place}</div>
+        <div class="ev-detail-row"><span>??</span> ${e.price}</div>
       </div>`;
     feed.appendChild(card);
   });
@@ -766,10 +733,10 @@ function renderBannerEvents() {
   });
 }
 
-// ══════════════════════════════════════
+// --------------------------------------
 // ESTADO
-// ══════════════════════════════════════
-let saved = JSON.parse(localStorage.getItem('ctg_saved') || '[]');
+// --------------------------------------
+let saved = JSON.parse(localStorage.getItem('gua_saved') || '[]');
 let currentFilter = 'todos';
 let currentSearch = '';
 let currentModal = null;
@@ -778,9 +745,9 @@ let mapMarkers = [];
 let mapInitialized = false;
 let mapFocusPlace = null;
 
-// ══════════════════════════════════════
+// --------------------------------------
 // NAVEGACIÓN
-// ══════════════════════════════════════
+// --------------------------------------
 function goScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -794,9 +761,9 @@ function goScreen(id) {
   window.scrollTo(0,0);
 }
 
-// ══════════════════════════════════════
+// --------------------------------------
 // FILTROS
-// ══════════════════════════════════════
+// --------------------------------------
 function setFilter(cat, el) {
   currentFilter = cat;
   document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
@@ -819,9 +786,9 @@ function matchesFilter(p) {
   return catMatch && searchMatch;
 }
 
-// ══════════════════════════════════════
+// --------------------------------------
 // RENDER LUGARES
-// ══════════════════════════════════════
+// --------------------------------------
 function renderPlaces() {
   const feed = document.getElementById('places-feed');
   feed.innerHTML = '';
@@ -850,15 +817,15 @@ function makePlaceCard(p, i) {
     <div class="place-info">
       <h3>${p.name}</h3>
       <div class="place-tags">${p.tags.map(t=>`<span class="p-tag">${t}</span>`).join('')}</div>
-      <div class="place-barrio">📍 ${p.barrio}</div>
+      <div class="place-barrio">?? ${p.barrio}</div>
     </div>`;
   d.addEventListener('click', e => { if(!e.target.closest('.heart-btn')) openModal(p); });
   return d;
 }
 
-// ══════════════════════════════════════
+// --------------------------------------
 // FILTER EVENTOS
-// ══════════════════════════════════════
+// --------------------------------------
 function filterEvents() {
   const upcoming = getUpcomingEvents();
   const filtered = upcoming.filter(e => {
@@ -871,13 +838,13 @@ function filterEvents() {
   renderBannerEvents();
 }
 
-// ══════════════════════════════════════
+// --------------------------------------
 // MAPA
-// ══════════════════════════════════════
+// --------------------------------------
 function initMap() {
   if(mapInitialized) { leafMap.invalidateSize(); updateMapPins(); return; }
   mapInitialized = true;
-  leafMap = L.map('map', {zoomControl:true}).setView([10.4235,-75.5470],14);
+  leafMap = L.map('map', {zoomControl:true}).setView([6.2320,-75.1500],15);
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',maxZoom:19}).addTo(leafMap);
   updateMapPins();
 }
@@ -889,10 +856,10 @@ function updateMapPins() {
   const toShow = mapFocusPlace !== null ? places.filter(p => p.id === mapFocusPlace) : places.filter(matchesFilter);
   toShow.forEach(p => {
     const icon = L.divIcon({
-      html:`<div style="background:#1C1508;border:2px solid #C9983A;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,0.5);"><svg viewBox="0 0 80 80" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">${getSVG(p.cat)}</svg></div>`,
+      html:`<div style="background:#1C1508;border:2px solid #2980B9;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,0.5);"><svg viewBox="0 0 80 80" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">${getSVG(p.cat)}</svg></div>`,
       className:'', nit:'', iconSize:[36,36], iconAnchor:[18,18]
     });
-    const marker = L.marker(p.coords,{icon}).addTo(leafMap).bindPopup(`<div class="popup-name">${p.name}</div><div class="popup-barrio">📍 ${p.barrio}</div>`);
+    const marker = L.marker(p.coords,{icon}).addTo(leafMap).bindPopup(`<div class="popup-name">${p.name}</div><div class="popup-barrio">?? ${p.barrio}</div>`);
     mapMarkers.push(marker);
   });
 }
@@ -912,9 +879,9 @@ function goToMap(place) {
   }, 380);
 }
 
-// ══════════════════════════════════════
+// --------------------------------------
 // MODAL
-// ══════════════════════════════════════
+// --------------------------------------
 function openModal(p) {
   currentModal = p;
   const isSaved = saved.includes(p.id);
@@ -934,7 +901,7 @@ function openModal(p) {
   document.getElementById('modal-title').textContent = p.name;
   document.getElementById('modal-tags').innerHTML = p.tags.map(t=>`<span class="m-tag">${t}</span>`).join('');
   document.getElementById('modal-desc').textContent = p.desc;
-  document.getElementById('modal-barrio').innerHTML = `📍 ${p.barrio}`;
+  document.getElementById('modal-barrio').innerHTML = `?? ${p.barrio}`;
 
   const full = Math.floor(p.rating);
   const starsHtml = Array.from({length:5},(_,i)=>`<i class="star fa${i<full?'s':'r'} fa-star ${i<full?'on':'off'}"></i>`).join('');
@@ -945,8 +912,8 @@ function openModal(p) {
     <div class="detail-box"><div class="d-label">Precio</div><div class="d-val">${p.precio}</div></div>`;
 
   let infoHtml = '';
-  if (p.telefono) infoHtml += `<div class="info-line"><span>📞</span> <span style="cursor:pointer;color:var(--gold);" onclick="navigator.clipboard.writeText('${p.telefono}');this.innerText='¡Copiado!';">${p.telefono}</span></div>`;
-  if (p.instagram) infoHtml += `<div class="info-line"><span>📷</span> <a href="https://instagram.com/${p.instagram}" target="_blank" style="color:var(--gold);text-decoration:none;">@${p.instagram}</a></div>`;
+  if (p.telefono) infoHtml += `<div class="info-line"><span>??</span> <span style="cursor:pointer;color:var(--gold);" onclick="navigator.clipboard.writeText('${p.telefono}');this.innerText='¡Copiado!';">${p.telefono}</span></div>`;
+  if (p.instagram) infoHtml += `<div class="info-line"><span>??</span> <a href="https://instagram.com/${p.instagram}" target="_blank" style="color:var(--gold);text-decoration:none;">@${p.instagram}</a></div>`;
   document.getElementById('modal-info').innerHTML = infoHtml;
 
   if (p.menu && p.menu.some(it => it)) {
@@ -976,9 +943,9 @@ function handleOverlayClick(e) {
   if(e.target === document.getElementById('overlay')) closeModal();
 }
 
-// ══════════════════════════════════════
+// --------------------------------------
 // GUARDAR
-// ══════════════════════════════════════
+// --------------------------------------
 function toggleSave(e, id) {
   e.stopPropagation();
   const btn = e.currentTarget;
@@ -993,7 +960,7 @@ function toggleSave(e, id) {
     btn.style.transform = 'scale(1.4)';
     setTimeout(() => btn.style.transform = '', 250);
   }
-  localStorage.setItem('ctg_saved', JSON.stringify(saved));
+  localStorage.setItem('gua_saved', JSON.stringify(saved));
 }
 
 function toggleSaveFromModal() {
@@ -1002,7 +969,7 @@ function toggleSaveFromModal() {
   const hb = document.getElementById('btn-modal-heart');
   if(saved.includes(id)) { saved = saved.filter(s=>s!==id); hb.innerHTML='<i class="fa-regular fa-heart"></i>'; }
   else { saved.push(id); hb.innerHTML='<i class="fa-solid fa-heart" style="color:#E24B4A"></i>'; }
-  localStorage.setItem('ctg_saved', JSON.stringify(saved));
+  localStorage.setItem('gua_saved', JSON.stringify(saved));
   renderPlaces();
 }
 
